@@ -12,12 +12,24 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '开发笔记',
+      name: '',
       repo: '',
       basePath: './docs/',
       loadSidebar: '../_sidebar.md',
       coverpage: '../_coverpage.md',
-      themeColor: '#3F51B5'
+      subMaxLevel: 2,
+      autoHeader: true,
+      homepage: '../README.md',
+      auto2top: true,
+      plugins: [
+        EditOnGithubPlugin.create('https://github.com/lipengzhou/nodejs-tutorial/edit/master/docs/')
+      ],
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        // 搜索标题的最大程级, 1 - 6
+        depth: 3
+      }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
