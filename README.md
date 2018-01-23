@@ -1,4 +1,4 @@
-# CSS开发笔记
+# JS开发笔记
 
 > 更新日期：{docsify-updated}
 

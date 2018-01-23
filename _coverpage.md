@@ -1,6 +1,6 @@
 <img src="./media/cssbg.png" width="500" alt="">
 
-# CSS开发笔记
+# JS开发笔记
 
 > 闫晓波 <span style="font-size: 16px;"><a href="http://www.itcast.cn/" target="blank"></a></span>
 
