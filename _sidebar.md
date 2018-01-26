@@ -1,1 +1,2 @@
-- [原型原型链以及继承](/md/prototype.md)
+- [原型以及原型链](/md/prototype.md)
+- [继承](/md/interface.md)
