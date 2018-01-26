@@ -2,6 +2,7 @@
   所谓继承，就是把一些有共性的东西分类，然后提取公共属性，当定义子类时直接从父类中继承这些具有共性的方法或属性，ES6以前JS并没有继承这一说，但是可以通过函数以及原型链的一些特性模拟出继承
 
 ### 直接使用原型链
+
 ```
 function SuperType(){
   this.colors = ["red","blue","green"];
@@ -19,8 +20,10 @@ alert(instance2.colors); //"red,blue,green,black"
 
 > 由上例可见，直接使用原型链，每个SuperType的实例都共享同样一份colors，一个对象实例改变其内容，其他对象实例中的colors内容同样改变，还有就是原型链无法向构造函数传递参数。
 
+
 ### 借用构造函数继承
 + 通过函数的apply()或call()方法实现
+
 ```
 function SuperType(){
   this.colors = ["red","blue","green"];
@@ -40,6 +43,7 @@ alert(instance2.colors);  //"red,blue,green"
 
 ### 组合继承
   组合继承结合了原型链和借用构造函数的两种继承方式，它使用原型链实现了对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承，这样即保证了父类原型上定义的方法和属性对子类可见，同时又保证了每个实例都有它自己的属性，互相之间不存在影响
+
   ```
   function SuperType(name){
     this.name = name;
