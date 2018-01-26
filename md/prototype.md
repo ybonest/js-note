@@ -12,3 +12,39 @@
   ```
   console.log(Person.prototype.isPrototypeOf(person1))
   ```
+
+### 构造函数与原型实例
++ 基本写法
+```
+function Person(age){
+  this.age = age
+}
+Person.prototype.name = "bo";
+Person.prototype.sayName = function(){
+  console.log(this.name);
+}
+```
++ 原型对象简写
+```
+function Person(age){
+  this.age = age
+}
+Person.prototype = {
+  name:"bo",
+  sayName:function(){
+    console.log(this.name);
+  }
+}
+```
+> 注意该写法其实上是让对象的原型指向了一个新的对象，因此原型对象丢失了constructor属性，也就是说该原型对象不在指向构造函数本身，因此当需要原型继续指向构造函数时，需要在原型对象中添加constructor指向，即
+```
+Person.prototype = {
+  constructor:Person,
+  name:"bo",
+  sayName:function(){
+    console.log(this.name);
+  }
+}
+```
+这种情况下constructor虽然重新指向了构造函数本身，但毕竟不是原生的，它已经丢失了原本的一些特点，比如默认情况下constructor是不可枚举的，但以上操作后constructor就变成了可枚举了.(一般情况下JS中预定义的原型属性一般是不可枚举的，而自己定义的属性一般可枚举，属性的枚举性会影响for...in...,JSON.stringify(),Object.keys())
+
