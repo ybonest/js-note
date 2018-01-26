@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Person(name){
+      this.name = name;
+    }
+    var p1 = new Person();
+    console.log(Person.prototype)  //指向Person原型
+    console.log(p1.__proto__); //指向Person的原型
+    console.log(p1.__proto__ === Person.prototype); //true 说明Person.prototype和p1.__proto__指向的是同一片内存空间，同一个东西
+    console.log(Person.__proto__);   //使用log打印 f() { [native code] }
+    console.dir(Person.__proto__);   //使用dir打印 可以看到输出的对象中constructor指向了Function()
+    console.dir(Function.prototype);  //输出和Person.__proto__一样的东西
+    console.log(Person.__proto__ === Function.prototype);  //输出true 可见构造函数也是Function的实例
+    console.dir(Function.prototype.__proto__)  //Object
+    console.dir(Person.prototype.__proto__)  //Object 
+    console.dir(Object.prototype)  //Object
+    console.log(Person.prototype.__proto__ === Object.prototype)  //true 可见Person的原型对象最终指向了Object
+    console.dir(Object.__proto__)  //Function
+    console.dir(Object.prototype.__proto__)  //最终指向null
+  </script>
+</body>
+</html>
