@@ -1,1 +1,1 @@
-- [BFC-块级格式化上下文](/md/prototype.md)
+- [原型原型链以及继承](/md/prototype.md)
