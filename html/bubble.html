@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .four {
+      width: 100px;
+      height: 100px;
+      background-color: burlywood;
+      margin: auto;
+    }
+
+    .three {
+      width: 200px;
+      height: 200px;
+      background-color: brown;
+      margin: auto;
+    }
+
+    .two {
+      width: 300px;
+      height: 300px;
+      background-color: blueviolet;
+      margin: auto;
+    }
+
+    .one {
+      width: 400px;
+      height: 400px;
+      background-color: blanchedalmond;
+      margin: auto;
+    }
+
+    p {
+      height: 50px;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    .clear{
+      position: absolute;
+      top: 10px;
+      left: 0px;
+      background-color: aliceblue;
+      height: 30px;
+      width: 50px;
+      border: 1px solid burlywood;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="one">
+    <p></p>
+    <div class="two">
+      <p></p>
+      <div class="three">
+        <p></p>
+        <div class="four">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="clear">刷新</button>
+
+  <script>
+    var one = document.querySelector('.one');
+    var two = document.querySelector('.two');
+    var three = document.querySelector('.three');
+    var four = document.querySelector('.four');
+
+    var clear = document.querySelector('.clear');
+
+    one.onclick = function () {
+      one.children[0].innerHTML = '点击事件被触发了!'
+    }
+
+    two.onclick = function () {
+      two.children[0].innerHTML = '点击事件被触发了!'
+    }
+
+    three.onclick = function () {
+      three.children[0].innerHTML = '点击事件被触发了!'
+    }
+
+    four.onclick = function () {
+      four.children[0].innerHTML = '点击事件被触发了!'
+    }
+
+    clear.onclick = function () {
+      var ps = document.querySelectorAll('p');
+      ps.forEach(function(ele){
+        ele.innerHTML = '';
+      })
+    }
+  </script>
+</body>
+
+</html>

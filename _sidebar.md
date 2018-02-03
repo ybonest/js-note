@@ -1,2 +1,3 @@
 - [原型以及原型链](/md/prototype.md)
 - [继承](/md/interface.md)
+- [冒泡、继承、默认事件](/md/bubble.md)
