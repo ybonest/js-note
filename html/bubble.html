@@ -42,14 +42,22 @@
       text-align: center;
     }
 
-    .clear{
+    .common{
       position: absolute;
-      top: 10px;
       left: 0px;
-      background-color: aliceblue;
       height: 30px;
-      width: 50px;
+      width: 80px;
       border: 1px solid burlywood;
+    }
+
+    .clear{
+      top: 10px;
+      background-color: aliceblue;
+    }
+
+    .stop-bubble{
+      top:50px;
+      background-color: blanchedalmond;
     }
   </style>
 </head>
@@ -67,7 +75,8 @@
       </div>
     </div>
   </div>
-  <button class="clear">刷新</button>
+  <button class="clear common">刷新</button>
+  <button class="stop-bubble common">禁止冒泡</button>
 
   <script>
     var one = document.querySelector('.one');
@@ -76,28 +85,69 @@
     var four = document.querySelector('.four');
 
     var clear = document.querySelector('.clear');
+    var stopBubbleBtn = document.querySelector('.stop-bubble');
 
-    one.onclick = function () {
-      one.children[0].innerHTML = '点击事件被触发了!'
+    var flag = false;
+
+    one.onclick = function (e) {
+      one.children[0].innerHTML = '点击事件被触发了!';
+      if(flag){
+        stopBubble(e);
+      }
     }
 
-    two.onclick = function () {
-      two.children[0].innerHTML = '点击事件被触发了!'
+    two.onclick = function (e) {
+      two.children[0].innerHTML = '点击事件被触发了!';
+      if(flag){
+        stopBubble(e);
+      }
     }
 
-    three.onclick = function () {
-      three.children[0].innerHTML = '点击事件被触发了!'
+    three.onclick = function (e) {
+      three.children[0].innerHTML = '点击事件被触发了!';
+      if(flag){
+        stopBubble(e);
+      }
     }
 
-    four.onclick = function () {
-      four.children[0].innerHTML = '点击事件被触发了!'
+    four.onclick = function (e) {
+      four.children[0].innerHTML = '点击事件被触发了!';
+      if(flag){
+        stopBubble(e);
+      }
     }
 
-    clear.onclick = function () {
+    clear.onclick = function (e) {
       var ps = document.querySelectorAll('p');
+      // Array.prototype.forEach.call(ps);
+      console.dir(ps);
       ps.forEach(function(ele){
         ele.innerHTML = '';
       })
+    }
+
+    stopBubbleBtn.onclick = function(e){
+      flag = !flag;
+      if(flag){
+        stopBubbleBtn.innerText = '允许冒泡';
+      }else{
+        stopBubbleBtn.innerText = '禁止冒泡';
+      }
+    }
+
+    document.onclick = function(){
+      console.log('document点击事件被触发了')
+    }
+
+    window.onclick = function(){
+      console.log('window点击事件被触发了')
+    }
+    function stopBubble(e){
+      if(e&&e.stopPropagation){
+        e.stopPropagation();
+      }else{
+        window.event.cancelBubble = true;
+      }
     }
   </script>
 </body>
