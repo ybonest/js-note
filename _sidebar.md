@@ -2,3 +2,4 @@
 - [继承](/md/interface.md)
 - [冒泡、继承、默认事件](/md/bubble.md)
 - [attachEvent和addEventListener区别](/md/addEventListener.md)
+- [document ready和onload区别](/md/onload.md)
