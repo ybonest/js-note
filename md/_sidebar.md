@@ -1,5 +1,6 @@
 - [原型以及原型链](/md/prototype.md)
 - [继承](/md/interface.md)
-- [冒泡、继承、默认事件](/md/bubble.md)
+- [冒泡、默认事件](/md/bubble.md)
 - [attachEvent和addEventListener区别](/md/addEventListener.md)
 - [document ready和onload区别](/md/onload.md)
+- [事件模型](/md/js的事件模型.md)
